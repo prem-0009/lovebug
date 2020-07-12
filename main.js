@@ -40,7 +40,7 @@ const randomClient = function(clients) {
 
 const matchRandomly = function() {
   // get our client's location within our system
-  const clientLocation = clients.indexOf(clients[Math.ceil(Math.random()*clients.length-1)+1]);
+  const clientLocation = clients.indexOf(clients[Math.ceil(Math.random()*clients.length-1)+1]);//added clients[Math.ceil(Math.random()*clients.length-1)+1] to get random client
   // exclude our client from matches by making an array of everyone else
   // find all the clients before our client in the system
   const clientsBeforeOurClient = clients.slice(0,clientLocation);
