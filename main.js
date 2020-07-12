@@ -40,7 +40,8 @@ const randomClient = function(clients) {
 
 const matchRandomly = function() {//removed client from function argument
   // get our client's location within our system
-  const clientLocation = clients.indexOf(clients[Math.ceil(Math.random()*clients.length-1)+1]);//added clients[Math.ceil(Math.random()*clients.length-1)+1] to get random client
+  const clientLocation = clients.indexOf(clients[Math.floor(Math.random()*clients.length)+1]);//added clients[Math.floor(Math.random()*clients.length)+1] to get random client
+  //+1 will not give us undefined math with clients..
   // exclude our client from matches by making an array of everyone else
   // find all the clients before our client in the system
   const clientsBeforeOurClient = clients.slice(0,clientLocation);
@@ -50,7 +51,7 @@ const matchRandomly = function() {//removed client from function argument
   const otherClients = clientsBeforeOurClient[clientsBeforeOurClient.length-1]+ ' and '+clientsAfterOurClient[0];//changes here, look at next line
   //before   const otherClients = clientsBeforeOurClient + clientsAfterOurClient; after is above
   // return a random client from the remaining pool
-  return `The random good matches " ${otherClients}  ."  `
+  return `The random good matches: " ${otherClients}  ."  `
 
 }
 // console.log(matchRandomly());
