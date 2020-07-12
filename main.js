@@ -38,7 +38,7 @@ const randomClient = function(clients) {
   return clients[Math.floor(Math.random() * clients.length)];//removed -1
 }
 
-const matchRandomly = function() {
+const matchRandomly = function() {//removed client from function argument
   // get our client's location within our system
   const clientLocation = clients.indexOf(clients[Math.ceil(Math.random()*clients.length-1)+1]);//added clients[Math.ceil(Math.random()*clients.length-1)+1] to get random client
   // exclude our client from matches by making an array of everyone else
